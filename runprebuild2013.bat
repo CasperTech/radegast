@@ -22,7 +22,7 @@ echo ##########################################
 if not exist bin mkdir bin
 
 :: run prebuild to generate solution/project files from prebuild.xml configuration file
-METAbolt\prebuild.exe /target vs2013
+METAbolt\prebuild.exe /target vs2012
 
 :: build compile.bat file based on command line parameters
 echo @echo off > compile.bat
