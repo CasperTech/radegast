@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RadegastSpeech;
-using RadegastSpeech.Talk;
-using Radegast;
+using METAboltSpeech;
+using METAboltSpeech.Talk;
+using METAbolt;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     public class MacSpeech : IRadSpeech
     {
@@ -43,7 +43,7 @@ namespace RadegastSpeech
         }
 
         public void Speak(
-            RadegastSpeech.Talk.QueuedSpeech utterance,
+            METAboltSpeech.Talk.QueuedSpeech utterance,
             string filename)
         {
             synth.Speak(utterance, filename);

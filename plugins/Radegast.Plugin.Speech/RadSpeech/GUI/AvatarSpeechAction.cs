@@ -1,6 +1,7 @@
 ﻿// 
-// Radegast Metaverse Client
-// Copyright (c) 2009-2014, Radegast Development Team
+// METABolt Metaverse Client, forked from RADISHGHAST
+// Copyright (c) 2015, METABolt Development Team
+// Copyright (c) 2009-2014, RADISHGHAST Development Team
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -11,7 +12,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -31,14 +32,14 @@
 using System;
 using System.Windows.Forms;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 
-namespace RadegastSpeech.GUI
+namespace METAboltSpeech.GUI
 {
     public class AvatarSpeechAction : ContextAction
     {
         private PluginControl control;
-        public AvatarSpeechAction(RadegastInstance inst, PluginControl pc)
+        public AvatarSpeechAction(METAboltInstance inst, PluginControl pc)
             : base(inst)
         {
             control = pc;
@@ -86,7 +87,7 @@ namespace RadegastSpeech.GUI
                 return;
 
             System.Windows.Forms.Form va =
-                    new RadegastSpeech.GUI.VoiceAssignment(control, name, id );
+                    new METAboltSpeech.GUI.VoiceAssignment(control, name, id );
             va.Show();
             
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     class ConferenceIMSession : IMSession
     {
@@ -58,7 +58,7 @@ namespace RadegastSpeech.Conversation
             // Command to Close the session?
             if (message.ToLower() == "disconnect")
             {
-                Radegast.RadegastTab tab = TabConsole.Tabs[Title];
+                METAbolt.METAboltTab tab = TabConsole.Tabs[Title];
                 tab.Close();
                 return true;
             }

@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using OpenMetaverse;
 using OpenMetaverse.StructuredData;
 
-namespace RadegastSpeech.Talk
+namespace METAboltSpeech.Talk
 {
     internal class Voices
     {

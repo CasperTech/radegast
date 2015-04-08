@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using RadegastSpeech.Talk;
-using Radegast;
+using METAboltSpeech.Talk;
+using METAbolt;
 using Monobjc;
 using Monobjc.Cocoa;
 using System.Runtime.InteropServices;
 using OpenMetaverse.StructuredData;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     /// <summary>
     /// Low level interface to Mac OSX speech synthesis functions.

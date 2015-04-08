@@ -5,7 +5,7 @@ using System.Text;
 using System.Speech.Recognition;
 using OpenMetaverse;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     internal class WinRecog
     {

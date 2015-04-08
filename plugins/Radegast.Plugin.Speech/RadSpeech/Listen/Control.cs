@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 
-namespace RadegastSpeech.Listen
+namespace METAboltSpeech.Listen
 {
     class Control : AreaControl
     {

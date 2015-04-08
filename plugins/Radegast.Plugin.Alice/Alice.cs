@@ -1,6 +1,7 @@
 ﻿// 
-// Radegast Metaverse Client
-// Copyright (c) 2009-2014, Radegast Development Team
+// METABolt Metaverse Client, forked from RADISHGHAST
+// Copyright (c) 2015, METABolt Development Team
+// Copyright (c) 2009-2014, RADISHGHAST Development Team
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -11,7 +12,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -34,17 +35,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 using OpenMetaverse.StructuredData;
 using AIMLbot;
 
-namespace Radegast.Plugin.Alice
+namespace METAbolt.Plugin.Alice
 {
-    [Radegast.Plugin(Name = "ALICE Chatbot", Description = "A.L.I.C.E. based AI chat bot", Version = "1.1")]
-    public class AliceAI : IRadegastPlugin
+    [METAbolt.Plugin(Name = "ALICE Chatbot", Description = "A.L.I.C.E. based AI chat bot", Version = "1.1")]
+    public class AliceAI : IMETAboltPlugin
     {
-        private RadegastInstance Instance;
+        private METAboltInstance Instance;
         private GridClient Client { get { return Instance.Client; } }
 
         private bool Enabled = false;
@@ -63,7 +64,7 @@ namespace Radegast.Plugin.Alice
         private bool EnableRandomDelay = false;
         private bool AimlLoaded = false;
 
-        public void StartPlugin(RadegastInstance inst)
+        public void StartPlugin(METAboltInstance inst)
         {
             Instance = inst;
             Instance.ClientChanged += new EventHandler<ClientChangedEventArgs>(Instance_ClientChanged);
@@ -326,7 +327,7 @@ namespace Radegast.Plugin.Alice
         }
 
 
-        public void StopPlugin(RadegastInstance Instance)
+        public void StopPlugin(METAboltInstance Instance)
         {
             // Remove the menu buttons
             EnabledButton.Dispose();

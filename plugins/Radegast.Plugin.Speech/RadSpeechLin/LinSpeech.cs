@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RadegastSpeech;
-using RadegastSpeech.Talk;
+using METAboltSpeech;
+using METAboltSpeech.Talk;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     public class LinSpeech : IRadSpeech
     {
@@ -64,7 +64,7 @@ namespace RadegastSpeech
         }
 
         public void Speak(
-            RadegastSpeech.Talk.QueuedSpeech utterance,
+            METAboltSpeech.Talk.QueuedSpeech utterance,
             string filename)
         {
             synth.Speak(utterance, filename);

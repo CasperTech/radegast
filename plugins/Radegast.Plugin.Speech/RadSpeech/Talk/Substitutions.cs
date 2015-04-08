@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using OpenMetaverse.StructuredData;
 
-namespace RadegastSpeech.Talk
+namespace METAboltSpeech.Talk
 {
     internal class Substitutions
     {

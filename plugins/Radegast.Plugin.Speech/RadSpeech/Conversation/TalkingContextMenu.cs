@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Radegast;
+using METAbolt;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     /// <summary>
     /// Talking version of a context menu.
     /// </summary>
     class TalkingContextMenu
     {
-        private RadegastContextMenuStrip menuStrip;
+        private METAboltContextMenuStrip menuStrip;
         private PluginControl control;
         private string menuFor;
         private OpenMetaverse.UUID id;
@@ -20,10 +20,10 @@ namespace RadegastSpeech.Conversation
         internal TalkingContextMenu(PluginControl pc)
         {
             control = pc;
-            RadegastContextMenuStrip.OnContentMenuOpened += OnContentMenuOpened;
-            RadegastContextMenuStrip.OnContentMenuItemSelected += OnContentMenuItemSelected;
-            RadegastContextMenuStrip.OnContentMenuItemClicked += OnContentMenuItemClicked;
-            RadegastContextMenuStrip.OnContentMenuClosing += OnContentMenuClosing;
+            METAboltContextMenuStrip.OnContentMenuOpened += OnContentMenuOpened;
+            METAboltContextMenuStrip.OnContentMenuItemSelected += OnContentMenuItemSelected;
+            METAboltContextMenuStrip.OnContentMenuItemClicked += OnContentMenuItemClicked;
+            METAboltContextMenuStrip.OnContentMenuClosing += OnContentMenuClosing;
         }
 
         internal void Start()
@@ -83,7 +83,7 @@ namespace RadegastSpeech.Conversation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnContentMenuOpened(object sender, RadegastContextMenuStrip.ContextMenuEventArgs e)
+        private void OnContentMenuOpened(object sender, METAboltContextMenuStrip.ContextMenuEventArgs e)
         {
             lock (e.Menu)
             {
@@ -141,7 +141,7 @@ namespace RadegastSpeech.Conversation
         private void OnSpeechMenu( object sender, EventArgs e )
         {
             System.Windows.Forms.Form va =
-                new RadegastSpeech.GUI.VoiceAssignment(control, menuFor, id);
+                new METAboltSpeech.GUI.VoiceAssignment(control, menuFor, id);
             va.Show();
         }
 
@@ -150,7 +150,7 @@ namespace RadegastSpeech.Conversation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnContentMenuClosing(object sender, RadegastContextMenuStrip.ContextMenuEventArgs e)
+        private void OnContentMenuClosing(object sender, METAboltContextMenuStrip.ContextMenuEventArgs e)
         {
             lock (e.Menu)
             {
@@ -159,7 +159,7 @@ namespace RadegastSpeech.Conversation
             }
         }
         
-        private void OnContentMenuItemSelected(object sender, RadegastContextMenuStrip.ContextMenuEventArgs e)
+        private void OnContentMenuItemSelected(object sender, METAboltContextMenuStrip.ContextMenuEventArgs e)
         {
             lock (e.Menu)
             {
@@ -176,7 +176,7 @@ namespace RadegastSpeech.Conversation
             }
         }
 
-        private void OnContentMenuItemClicked(object sender, RadegastContextMenuStrip.ContextMenuEventArgs e)
+        private void OnContentMenuItemClicked(object sender, METAboltContextMenuStrip.ContextMenuEventArgs e)
         {
             if (!e.MenuItem.Enabled)
             {

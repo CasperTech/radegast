@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     internal class Friendship : Mode
     {

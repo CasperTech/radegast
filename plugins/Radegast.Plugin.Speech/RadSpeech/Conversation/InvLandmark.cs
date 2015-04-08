@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse.Assets;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     class InvLandmark : Mode
     {

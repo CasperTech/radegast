@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RadegastSpeech.Listen
+namespace METAboltSpeech.Listen
 {
     internal class Recognizer
     {

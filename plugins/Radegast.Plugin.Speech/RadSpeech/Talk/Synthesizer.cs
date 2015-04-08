@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Talk
+namespace METAboltSpeech.Talk
 {
     internal class Synthesizer
     {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     /// <summary>
     /// Conversation mode for chatting with other avatars.
@@ -16,9 +16,9 @@ namespace RadegastSpeech.Conversation
         private bool muteObjects = false;
         private const string MUTE_OBJECTS = "mute objects";
         private const string UNMUTE_OBJECTS = "unmute objects";
-//        private Radegast.RadegastMovement movement;
+//        private METAbolt.METAboltMovement movement;
         internal System.Windows.Forms.Control Console { set; get;  }
-        private Radegast.ListViewNoFlicker nearby;
+        private METAbolt.ListViewNoFlicker nearby;
 
         internal Chat(PluginControl pc) : base(pc)
         {
@@ -27,8 +27,8 @@ namespace RadegastSpeech.Conversation
                 new EventHandler<ChatEventArgs>(OnChat);
             control.instance.Client.Self.AlertMessage +=
                 new EventHandler<AlertMessageEventArgs>(OnAlertMessage);
-            Radegast.RadegastTab chatTab = control.instance.TabConsole.Tabs["chat"];
-            Radegast.ChatConsole chatscreen = (Radegast.ChatConsole)chatTab.Control;
+            METAbolt.METAboltTab chatTab = control.instance.TabConsole.Tabs["chat"];
+            METAbolt.ChatConsole chatscreen = (METAbolt.ChatConsole)chatTab.Control;
 
             nearby = chatscreen.lvwObjects;
             nearby.SelectedIndexChanged += new EventHandler(nearby_SelectedIndexChanged);
@@ -54,8 +54,8 @@ namespace RadegastSpeech.Conversation
             
             if (control.instance.TabConsole != null && control.instance.TabConsole.TabExists("chat"))
             {
-                Radegast.RadegastTab chatTab = control.instance.TabConsole.Tabs["chat"];
-                Radegast.ChatConsole chatscreen = (Radegast.ChatConsole)chatTab.Control;
+                METAbolt.METAboltTab chatTab = control.instance.TabConsole.Tabs["chat"];
+                METAbolt.ChatConsole chatscreen = (METAbolt.ChatConsole)chatTab.Control;
 
                 nearby = chatscreen.lvwObjects;
                 nearby.SelectedIndexChanged -= new EventHandler(nearby_SelectedIndexChanged);
@@ -193,7 +193,7 @@ namespace RadegastSpeech.Conversation
             Talker.SayMore("Chat." );
             nearby_SelectedIndexChanged(null, null);
             /*
-                        movement = new Radegast.SleekMovement(control.instance.Client);
+                        movement = new METAbolt.SleekMovement(control.instance.Client);
 
                         Console.KeyDown +=
                             new System.Windows.Forms.KeyEventHandler(MainForm_KeyDown);

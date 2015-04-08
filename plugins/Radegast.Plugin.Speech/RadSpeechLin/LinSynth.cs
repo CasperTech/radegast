@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
-using RadegastSpeech.Talk;
+using METAboltSpeech.Talk;
 using System.Text.RegularExpressions;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 using OpenMetaverse.StructuredData;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     /// <summary>
     /// Linux Speech Synthesis based on Festival

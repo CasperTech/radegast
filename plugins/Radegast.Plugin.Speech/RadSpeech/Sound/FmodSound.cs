@@ -1,6 +1,7 @@
 ﻿// 
-// Speech Input and Output for the Radegast Metaverse Client
-// Copyright (c) 2009-2014, Radegast Development Team
+// Speech Input and Output for the METAbolt Metaverse Client
+// Copyright (c) 2015, METABolt Development Team
+// Copyright (c) 2009-2014, RADISHGHAST Development Team
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -11,7 +12,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -29,7 +30,7 @@
 // $Id: FmodSound.cs  $
 //
 
-// Define the following symbol to use the shared Radegast FMOD instance.
+// Define the following symbol to use the shared METAbolt FMOD instance.
 #define SHAREDFMOD
 
 using System;
@@ -39,13 +40,13 @@ using System.Text;
 using System.IO;
 using OpenMetaverse;
 using System.Threading;
-using Radegast.Media;
+using METAbolt.Media;
 
-namespace RadegastSpeech.Sound
+namespace METAboltSpeech.Sound
 {
     class FmodSound : Control
     {
-        Radegast.Media.Speech speechPlayer;
+        METAbolt.Media.Speech speechPlayer;
         private AutoResetEvent playing;
         private bool busy = true;
 
@@ -53,7 +54,7 @@ namespace RadegastSpeech.Sound
             : base(pc)
         {
             playing = new AutoResetEvent(false);
-            speechPlayer = new Radegast.Media.Speech();
+            speechPlayer = new METAbolt.Media.Speech();
             speechPlayer.OnSpeechDone += new Speech.SpeechDoneCallback(SpeechDoneHandler);
         }
 

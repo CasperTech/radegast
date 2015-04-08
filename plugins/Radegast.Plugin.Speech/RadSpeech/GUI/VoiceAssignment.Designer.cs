@@ -1,4 +1,4 @@
-﻿namespace RadegastSpeech.GUI
+﻿namespace METAboltSpeech.GUI
 {
     partial class VoiceAssignment
     {

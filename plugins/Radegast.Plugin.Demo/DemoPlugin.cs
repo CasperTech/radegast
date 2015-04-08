@@ -1,6 +1,7 @@
 ﻿// 
-// Radegast Metaverse Client
-// Copyright (c) 2009-2014, Radegast Development Team
+// METABolt Metaverse Client, forked from RADISHGHAST
+// Copyright (c) 2015, METABolt Development Team
+// Copyright (c) 2009-2014, RADISHGHAST Development Team
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -11,7 +12,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -33,20 +34,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 
-namespace Radegast.Plugin.Demo
+namespace METAbolt.Plugin.Demo
 {
-    [Radegast.Plugin(Name="Demo Plugin", Description="Demonstration of plugin capabilites", Version="1.0")]
-    public class DemoPlugin : IRadegastPlugin
+    [METAbolt.Plugin(Name="Demo Plugin", Description="Demonstration of plugin capabilites", Version="1.0")]
+    public class DemoPlugin : IMETAboltPlugin
     {
-        private RadegastInstance Instance;
+        private METAboltInstance Instance;
         private GridClient Client { get { return Instance.Client; } }
 
         private string version = "1.0";
 
-        public void StartPlugin(RadegastInstance inst)
+        public void StartPlugin(METAboltInstance inst)
         {
             Instance = inst;
             Instance.MainForm.TabConsole.DisplayNotificationInChat("Demo Plugin version 1.0 loaded");
@@ -61,7 +62,7 @@ namespace Radegast.Plugin.Demo
             Notification.OnNotificationDisplayed += new Notification.NotificationCallback(Notification_OnNotificationDisplayed);
         }
 
-        public void StopPlugin(RadegastInstance instance)
+        public void StopPlugin(METAboltInstance instance)
         {
             // Unregister events
             Client.Self.ChatFromSimulator -= new EventHandler<ChatEventArgs>(Self_ChatFromSimulator);

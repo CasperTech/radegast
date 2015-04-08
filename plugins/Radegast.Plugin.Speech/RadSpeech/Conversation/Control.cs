@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 using System.Text.RegularExpressions;
 using System.Net;
 using System.Windows.Forms;
@@ -15,7 +15,7 @@ using Monitor = ThreadPoolUtil.Monitor;
 #endif
 using System.Threading;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     /// <summary>
     /// Manages all conversations
@@ -87,7 +87,7 @@ namespace RadegastSpeech.Conversation
                 new EventHandler<SimChangedEventArgs>(Network_SimChanged);
 
             control.instance.Netcom.ClientLoggingIn +=
-                new EventHandler<Radegast.Netcom.OverrideEventArgs>(Netcom_ClientLoggingIn);
+                new EventHandler<METAbolt.Netcom.OverrideEventArgs>(Netcom_ClientLoggingIn);
             // Watch the coming and going of main window tabs.
             control.instance.TabConsole.OnTabAdded +=
                 new TabsConsole.TabCallback(TabConsole_OnTabAdded);
@@ -103,7 +103,7 @@ namespace RadegastSpeech.Conversation
                 new EventHandler<InstantMessageEventArgs>(OnInstantMessage);
 
             // Outgoing IMs
-            control.instance.Netcom.InstantMessageSent += new EventHandler<Radegast.Netcom.InstantMessageSentEventArgs>(Netcom_InstantMessageSent);
+            control.instance.Netcom.InstantMessageSent += new EventHandler<METAbolt.Netcom.InstantMessageSentEventArgs>(Netcom_InstantMessageSent);
 
             // Watch for global keys
             control.instance.MainForm.KeyUp += new KeyEventHandler(MainForm_KeyUp);
@@ -142,7 +142,7 @@ namespace RadegastSpeech.Conversation
         }
 
 
-        void Netcom_ClientLoggingIn(object sender, Radegast.Netcom.OverrideEventArgs e)
+        void Netcom_ClientLoggingIn(object sender, METAbolt.Netcom.OverrideEventArgs e)
         {
             Talker.SayMore("Logging in.  Please wait.");
         }
@@ -189,7 +189,7 @@ namespace RadegastSpeech.Conversation
             ActivateConversationFromTab(e.Tab);
         }
 
-        public void ActivateConversationFromTab(RadegastTab Tab)
+        public void ActivateConversationFromTab(METAboltTab Tab)
         {
             System.Windows.Forms.Control sTabControl = Tab.Control;
 
@@ -248,7 +248,7 @@ namespace RadegastSpeech.Conversation
             CreateConversationFromTab(e.Tab, true);
         }
 
-        public void CreateConversationFromTab(RadegastTab Tab, bool selectConversation)
+        public void CreateConversationFromTab(METAboltTab Tab, bool selectConversation)
         {
             System.Windows.Forms.Control sTabControl = Tab.Control;
 
@@ -356,7 +356,7 @@ namespace RadegastSpeech.Conversation
                 new EventHandler<SimChangedEventArgs>(Network_SimChanged);
 
             control.instance.Netcom.ClientLoggingIn -=
-                new EventHandler<Radegast.Netcom.OverrideEventArgs>(Netcom_ClientLoggingIn);
+                new EventHandler<METAbolt.Netcom.OverrideEventArgs>(Netcom_ClientLoggingIn);
             // Watch the coming and going of main window tabs.
             control.instance.TabConsole.OnTabAdded -=
                 new TabsConsole.TabCallback(TabConsole_OnTabAdded);
@@ -372,7 +372,7 @@ namespace RadegastSpeech.Conversation
                 new EventHandler<InstantMessageEventArgs>(OnInstantMessage);
 
             // Outgoing IMs
-            control.instance.Netcom.InstantMessageSent -= new EventHandler<Radegast.Netcom.InstantMessageSentEventArgs>(Netcom_InstantMessageSent);
+            control.instance.Netcom.InstantMessageSent -= new EventHandler<METAbolt.Netcom.InstantMessageSentEventArgs>(Netcom_InstantMessageSent);
 
             // System notifications in chat
             control.instance.TabConsole.OnChatNotification -= new TabsConsole.ChatNotificationCallback(TabConsole_OnChatNotification);
@@ -677,7 +677,7 @@ namespace RadegastSpeech.Conversation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void Netcom_InstantMessageSent(object sender, Radegast.Netcom.InstantMessageSentEventArgs e)
+        void Netcom_InstantMessageSent(object sender, METAbolt.Netcom.InstantMessageSentEventArgs e)
         {
             // Message to an individual
             Conversation.IMSession sess = (IMSession)control.converse.GetConversation(control.instance.Names.Get(e.TargetID, true));

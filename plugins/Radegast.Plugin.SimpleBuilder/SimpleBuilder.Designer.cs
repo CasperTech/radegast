@@ -36,7 +36,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lstPrims = new Radegast.ListViewNoFlicker();
+            this.lstPrims = new METAbolt.ListViewNoFlicker();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupTransform = new System.Windows.Forms.GroupBox();
             this.posZ = new System.Windows.Forms.NumericUpDown();
@@ -595,7 +595,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numRadius;
         public System.Windows.Forms.ColumnHeader columnHeader1;
-        public Radegast.ListViewNoFlicker lstPrims;
+        public METAbolt.ListViewNoFlicker lstPrims;
         private System.Windows.Forms.NumericUpDown scaleZ;
         private System.Windows.Forms.NumericUpDown scaleY;
         private System.Windows.Forms.NumericUpDown scaleX;

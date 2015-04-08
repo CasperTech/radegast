@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RadegastSpeech")]
-[assembly: AssemblyDescription("Speech plugin for Radegast")]
+[assembly: AssemblyTitle("METAboltSpeech")]
+[assembly: AssemblyDescription("Speech plugin for METAbolt")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RadegastSpeech")]
+[assembly: AssemblyProduct("METAboltSpeech")]
 [assembly: AssemblyCopyright("Mojito Sorbet 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

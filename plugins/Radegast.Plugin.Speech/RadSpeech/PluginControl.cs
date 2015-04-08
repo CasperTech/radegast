@@ -1,6 +1,7 @@
 ﻿// 
-// Radegast Metaverse Client Speech Interface
-// Copyright (c) 2009-2014, Radegast Development Team
+// METABolt Metaverse Client, forked from RADISHGHAST Speech Interface
+// Copyright (c) 2015, METABolt Development Team
+// Copyright (c) 2009-2014, RADISHGHAST Development Team
 // All rights reserved.
 // 
 // Redistribution and use in source and binary forms, with or without
@@ -11,7 +12,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -34,18 +35,18 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Reflection;
-using Radegast;
+using METAbolt;
 using System.Windows.Forms;
 using OpenMetaverse;
 using OpenMetaverse.StructuredData;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
-    [Radegast.Plugin(Name = "Speech", Description = "Adds TTS and STT accesibility capabilities to Radegast", Version = "0.3")]
-    public class PluginControl : IRadegastPlugin
+    [METAbolt.Plugin(Name = "Speech", Description = "Adds TTS and STT accesibility capabilities to METAbolt", Version = "0.3")]
+    public class PluginControl : IMETAboltPlugin
     {
         private const string VERSION = "0.3";
-        public RadegastInstance instance;
+        public METAboltInstance instance;
         internal Talk.Control talker;
         internal Listen.Control listener;
         internal Conversation.Control converse;
@@ -61,8 +62,8 @@ namespace RadegastSpeech
         /// Plugin start-up entry.
         /// </summary>
         /// <param name="inst"></param>
-        /// <remarks>Called by Radegast at start-up</remarks>
-        public void StartPlugin(RadegastInstance inst)
+        /// <remarks>Called by METAbolt at start-up</remarks>
+        public void StartPlugin(METAboltInstance inst)
         {
             instance = inst;
 
@@ -231,11 +232,11 @@ namespace RadegastSpeech
                     me.Checked = !me.Checked;
                     config["3d_sound"] = me.Checked;
                     instance.GlobalSettings.Save();
-                    Radegast.Media.Speech.Surround = me.Checked;
+                    METAbolt.Media.Speech.Surround = me.Checked;
                 });
 
                 button.Checked = config["3d_sound"].AsBoolean();
-                Radegast.Media.Speech.Surround = button.Checked;
+                METAbolt.Media.Speech.Surround = button.Checked;
 
                 SpeechButton.DropDownItems.Add(button);
             }
@@ -255,9 +256,9 @@ namespace RadegastSpeech
         /// Plugin shut-down entry
         /// </summary>
         /// <param name="inst"></param>
-        /// <remarks>Called by Radegast at shut-down, or when Speech is switched off.
+        /// <remarks>Called by METAbolt at shut-down, or when Speech is switched off.
         /// We use this to release system resources.</remarks>
-        public void StopPlugin(RadegastInstance inst)
+        public void StopPlugin(METAboltInstance inst)
         {
             instance.MainForm.KeyDown -= MainForm_KeyDown;
             SpeechButton.Dispose();
@@ -324,7 +325,7 @@ namespace RadegastSpeech
                 {
                     // Create conversations and pick active one if we are activating
                     // the speech plugin mid-session
-                    foreach (RadegastTab tab in instance.TabConsole.Tabs.Values)
+                    foreach (METAboltTab tab in instance.TabConsole.Tabs.Values)
                     {
                         converse.CreateConversationFromTab(tab, false);
                     }

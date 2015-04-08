@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Environment
+namespace METAboltSpeech.Environment
 {
     /// <summary>
     /// Keep track of other avatars

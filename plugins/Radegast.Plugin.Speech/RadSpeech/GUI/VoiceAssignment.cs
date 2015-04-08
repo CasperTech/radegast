@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using RadegastSpeech.Talk;
+using METAboltSpeech.Talk;
 using OpenMetaverse;
 
-namespace RadegastSpeech.GUI
+namespace METAboltSpeech.GUI
 {
     public partial class VoiceAssignment : Form
     {

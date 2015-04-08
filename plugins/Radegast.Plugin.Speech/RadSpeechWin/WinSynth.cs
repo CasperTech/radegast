@@ -7,12 +7,12 @@ using System.Speech;
 using System.IO;
 using System.Speech.Synthesis;
 using System.Speech.AudioFormat;
-using RadegastSpeech.Talk;
+using METAboltSpeech.Talk;
 using OpenMetaverse;
 using OpenMetaverse.StructuredData;
-using Radegast;
+using METAbolt;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     class WinSynth
     {

@@ -6,12 +6,12 @@ using AIMLBot = AIMLbot.Bot;
 
 using OpenMetaverse;
 
-namespace Radegast.Plugin.Alice
+namespace METAbolt.Plugin.Alice
 {
     public class TalkToAvatar : ContextAction
     {
         private AIMLBot aimlBot;
-        public TalkToAvatar(RadegastInstance inst, AIMLBot bot)
+        public TalkToAvatar(METAboltInstance inst, AIMLBot bot)
             : base(inst)
         {
             ContextType = typeof (Avatar);
@@ -21,7 +21,7 @@ namespace Radegast.Plugin.Alice
 
         public override bool Contributes(object o, System.Type type)
         {
-            if (!IsEnabledInRadegast) return false;
+            if (!IsEnabledInMETAbolt) return false;
             return type == typeof(FriendInfo) || type == typeof(Avatar);
         }
 
@@ -32,12 +32,12 @@ namespace Radegast.Plugin.Alice
 
         public override bool IsEnabled(object target)
         {
-            if (!IsEnabledInRadegast) return false;
+            if (!IsEnabledInMETAbolt) return false;
             Avatar a = target as Avatar;
             return (a != null && !string.IsNullOrEmpty(a.Name)) || base.IsEnabled(target);
         }
 
-        protected bool IsEnabledInRadegast
+        protected bool IsEnabledInMETAbolt
         {
             get { return Instance.GlobalSettings["plugin.alice.enabled"].AsBoolean();  }
         }

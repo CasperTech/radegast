@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse.Assets;
 using OpenMetaverse;
-using Radegast;
-namespace RadegastSpeech.Conversation
+using METAbolt;
+namespace METAboltSpeech.Conversation
 {
     class InvNotecard : Mode
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Threading;
 using OpenMetaverse;
-using Radegast;
+using METAbolt;
 
 #if (COGBOT_LIBOMV || USE_STHREADS)
 using ThreadPoolUtil;
@@ -14,7 +14,7 @@ using ThreadPool = ThreadPoolUtil.ThreadPool;
 using Monitor = ThreadPoolUtil.Monitor;
 #endif
 
-namespace RadegastSpeech.Talk
+namespace METAboltSpeech.Talk
 {
     /// <summary>
     /// General control of speech synthesis

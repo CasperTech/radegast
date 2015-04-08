@@ -21,8 +21,8 @@
   <item name="gender" value="0"/>
   <item name="birthday" value="2007/23/09"/>
   <item name="age" value="5"/>
-  <item name="birthplace" value="Open Metaverse"/>
-  <item name="website" value="http://www.openmetaverse.org/"/>
+  <item name="birthplace" value="METAbolt"/>
+  <item name="website" value="https://metabolt.casperdns.com/"/>
   <item name="adminemail" value=""/>
   <item name="islogging" value="false"/>
   <item name="willcallhome" value="false"/>

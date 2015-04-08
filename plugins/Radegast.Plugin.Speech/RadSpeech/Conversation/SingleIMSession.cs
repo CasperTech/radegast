@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     /// <summary>
     /// Instant Message session with an individual
@@ -47,7 +47,7 @@ namespace RadegastSpeech.Conversation
 
             if (message.ToLower() == "disconnect")
             {
-                Radegast.RadegastTab tab = control.instance.TabConsole.Tabs[Title];
+                METAbolt.METAboltTab tab = control.instance.TabConsole.Tabs[Title];
                 tab.Close();
                 return true;
             }

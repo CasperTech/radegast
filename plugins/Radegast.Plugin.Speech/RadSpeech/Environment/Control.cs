@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RadegastSpeech.Environment
+namespace METAboltSpeech.Environment
 {
     class Control : AreaControl
     {

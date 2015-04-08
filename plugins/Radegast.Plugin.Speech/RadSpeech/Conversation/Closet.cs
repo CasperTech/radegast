@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 using OpenMetaverse.Assets;
-using Radegast;
+using METAbolt;
 using System.Windows.Forms;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     internal class Closet : Mode
     {

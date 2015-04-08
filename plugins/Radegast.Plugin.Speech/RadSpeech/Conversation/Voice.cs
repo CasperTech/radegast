@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 using OpenMetaverse.Voice;
 
-namespace RadegastSpeech.Conversation
+namespace METAboltSpeech.Conversation
 {
     class Voice : Mode
     {

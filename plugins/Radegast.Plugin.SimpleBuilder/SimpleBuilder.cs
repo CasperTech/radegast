@@ -1,6 +1,6 @@
 ﻿#region Copyright
 // 
-// Radegast SimpleBuilder plugin extension
+// METAbolt SimpleBuilder plugin extension
 //
 // Copyright (c) 2014, Ano Nymous <anonymously@hotmail.de> | SecondLife-IM: anno1986 Resident
 // All rights reserved.
@@ -13,7 +13,7 @@
 //     * Redistributions in binary form must reproduce the above copyright
 //       notice, this list of conditions and the following disclaimer in the
 //       documentation and/or other materials provided with the distribution.
-//     * Neither the name of the application "Radegast", nor the names of its
+//     * Neither the name "METAbolt", nor "RADISHGHAST", nor the names of its
 //       contributors may be used to endorse or promote products derived from
 //       this software without specific prior written permission.
 // 
@@ -41,7 +41,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using Radegast;
+using METAbolt;
 using OpenMetaverse;
 #endregion
 
@@ -49,10 +49,10 @@ namespace SimpleBuilderNamespace
 {
     /// <summary>
     /// Example implementation of a control that can be used
-    /// as Radegast tab and loeaded as a plugin
+    /// as METAbolt tab and loeaded as a plugin
     /// </summary>
-    [Radegast.Plugin(Name = "SimpleBuilder Plugin", Description = "Allows you to build some basic prims, like boxes, cylinder, tubes, ... (requires permission!)", Version = "1.0")]
-    public partial class SimpleBuilder : RadegastTabControl, IRadegastPlugin
+    [METAbolt.Plugin(Name = "SimpleBuilder Plugin", Description = "Allows you to build some basic prims, like boxes, cylinder, tubes, ... (requires permission!)", Version = "1.0")]
+    public partial class SimpleBuilder : METAboltTabControl, IMETAboltPlugin
     {
         System.Threading.AutoResetEvent primDone = new System.Threading.AutoResetEvent(false);
 
@@ -104,9 +104,9 @@ namespace SimpleBuilderNamespace
         /// Main constructor used when actually creating the tab control for display
         /// Register client and instance events
         /// </summary>
-        /// <param name="instance">RadegastInstance</param>
+        /// <param name="instance">METAboltInstance</param>
         /// <param name="unused">This param is not used, but needs to be there to keep the constructor signature</param>
-        public SimpleBuilder(RadegastInstance instance, bool unused)
+        public SimpleBuilder(METAboltInstance instance, bool unused)
             : base(instance)
         {
             InitializeComponent();
@@ -137,8 +137,8 @@ namespace SimpleBuilderNamespace
         /// We add a button to the Plugins menu on the main window
         /// for this tab
         /// </summary>
-        /// <param name="inst">Main RadegastInstance</param>
-        public void StartPlugin(RadegastInstance inst)
+        /// <param name="inst">Main METAboltInstance</param>
+        public void StartPlugin(METAboltInstance inst)
         {
             this.instance = inst;
 
@@ -152,7 +152,7 @@ namespace SimpleBuilderNamespace
         /// Close the tab if it's active and remove the menu button
         /// </summary>
         /// <param name="inst"></param>
-        public void StopPlugin(RadegastInstance inst)
+        public void StopPlugin(METAboltInstance inst)
         {
             ActivateTabButton.Dispose();
             if (instance.TabConsole.Tabs.ContainsKey(tabID))
@@ -288,7 +288,7 @@ namespace SimpleBuilderNamespace
 
         /// <summary>
         /// Hadle case when GridClient is changed (relog haa occured without
-        /// quiting Radegast). We need to unregister events from the old client
+        /// quiting METAbolt). We need to unregister events from the old client
         /// and re-register them with the new
         /// </summary>
         /// <param name="sender"></param>

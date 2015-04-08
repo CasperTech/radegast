@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     internal abstract class AreaControl
     {

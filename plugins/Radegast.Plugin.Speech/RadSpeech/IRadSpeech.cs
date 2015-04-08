@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RadegastSpeech
+namespace METAboltSpeech
 {
     public delegate void SpeechEventHandler(string text);
     public interface IRadSpeech
